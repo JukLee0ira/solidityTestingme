@@ -1,4 +1,6 @@
-### Tesing features of v0.8.24
+this repository is used to store test code, test the features of different versions of the solidity compiler and language features on xdc.
+
+### Testing features of v0.8.24
 
 #### Language Features
 
