@@ -2,46 +2,52 @@
 pragma solidity ^0.8.24;
 
 contract BlobFeatureTest {
-    // 测试 block.blobbasefee
+    // Test block.blobbasefee
     function testBlobBaseFee() public view returns (uint256) {
         return block.blobbasefee;
     }
 
-    // 测试 blobhash(uint)
+
+    // Test blobhash(uint)
     function testBlobHash(uint256 index) public view returns (bytes32) {
         return blobhash(index);
     }
 }
 
 contract YulFeatureTest {
-    // 测试 Yul 内置函数
+
+    // Test Yul features
     function testYulFeatures() public pure returns (bytes32, uint256, bytes32) {
         bytes32 hash;
-        uint256 basefee;
+        uint256 blobFee;
         bytes32 copiedData;
         
         assembly {
-            // 测试 blobbasefee()
-            basefee := blobbasefee()
+
+            // Test blobbasefee()
+            blobFee := blobbasefee()
             
-            // 测试 blobhash()
+
+            // Test blobhash()
             hash := blobhash(0)
             
-            // 测试 mcopy()
+
+            // Test mcopy()
             let ptr := mload(0x40)
             mcopy(ptr, 0x00, 32)
             copiedData := mload(ptr)
             
-            // 测试 tload() 和 tstore()
+    
+            // Test tload() and tstore()
             tstore(0, 0x1234)
             let storedValue := tload(0)
         }
-        return (hash, basefee, copiedData);
+        return (hash, blobFee, copiedData);
     }
 }
 
 contract BytesConcatTest {
-    // 测试 bytes.concat
+    // Test bytes.concat
     function testBytesConcat(bytes memory a, bytes memory b) public pure returns (bytes memory) {
         return bytes.concat(a, b);
     }
@@ -56,7 +62,7 @@ contract FunctionPointerTest {
         return 2;
     }
     
-    // 测试函数指针比较
+    // Test function pointer comparison
     function testFunctionPointer() public pure returns (bool) {
         function() internal pure returns (uint256) f1 = foo;
         function() internal pure returns (uint256) f2 = bar;
