@@ -1,5 +1,7 @@
 this repository is used to store test code, test the features of different versions of the solidity language features on xdc.
 
+## Test features
+
 ### Testing features of v0.8.24
 
 - [x] Testing `block.blobbasefee`: global function, retrieve the blob base fee of the current block.
@@ -28,3 +30,71 @@ this repository is used to store test code, test the features of different versi
 ### Testing features of v0.8.28
 
 - [x] if support transient storage state variables of value types.
+
+## Test guide
+
+Before starting, please ensure that your development environment meets the following requirements:
+
+- **Node.js**: version 12.x or higher. You can check the Node.js version with the following command:
+
+  ```bash
+  node -v
+  ```
+
+- **npm or yarn**: used to manage project dependencies. You can check the npm or yarn version with the following command:
+
+  ```bash
+  npm -v
+  # or
+  yarn -v
+  ```
+
+### How to test
+
+1. **Clone the repository**
+
+   ```bash
+   git clone git@github.com:JukLee0ira/solidityTesting.git
+   cd solidityTesting
+   ```
+
+2. **Install dependencies**
+
+   Use npm or yarn to install the project dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Configure environment variables**
+
+   Create a `.env` file in the project root directory and configure it according to the following example:
+
+   ```plaintext
+   PRIVATE_KEY=your private key
+   RPC_URL=your RPC URL
+   ```
+
+   **Note**: Please ensure that your private key and RPC URL are valid, and do not publicly expose your private key.
+
+### Use Hardhat to test
+
+1. **Compile contracts**
+
+   Run the following command in the project root directory to compile the contracts:
+
+   ```bash
+   npx hardhat compile
+   ```
+
+2. **Run tests**
+
+   Use the following command to run the tests:
+
+   ```bash
+   npx hardhat test
+   ```
+
+   now you should see the test results of each feature
