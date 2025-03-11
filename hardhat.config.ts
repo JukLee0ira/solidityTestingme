@@ -24,7 +24,7 @@ const config: HardhatUserConfig = {
   },
   networks: {
     pNet: {
-      url: "http://192.168.60.36:8545",
+      url: process.env.RPC_URL,
       accounts: [PRIVATE_KEY],
     },
     hardhat: {
