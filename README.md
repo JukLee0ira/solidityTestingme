@@ -35,19 +35,8 @@ this repository is used to store test code, test the features of different versi
 
 Before starting, please ensure that your development environment meets the following requirements:
 
-- **Node.js**: version 12.x or higher. You can check the Node.js version with the following command:
-
-  ```bash
-  node -v
-  ```
-
-- **npm or yarn**: used to manage project dependencies. You can check the npm or yarn version with the following command:
-
-  ```bash
-  npm -v
-  # or
-  yarn -v
-  ```
+- **Node.js**: version 12.x or higher.
+- **npm**: used to manage project dependencies.
 
 ### How to test
 
@@ -60,12 +49,10 @@ Before starting, please ensure that your development environment meets the follo
 
 2. **Install dependencies**
 
-   Use npm or yarn to install the project dependencies:
+   Use npm to install the project dependencies:
 
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. **Configure environment variables**
