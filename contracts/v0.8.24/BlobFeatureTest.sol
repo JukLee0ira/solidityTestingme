@@ -2,9 +2,7 @@
 pragma solidity ^0.8.28;
 
 contract BlobFeatureTest {
-	function testconnect() public view returns (uint256) {
-		return block.chainid;
-	}
+    
     // Testing `block.blobbasefee`: global function, retrieve the blob base fee of the current block.
     function testBlobBaseFeeSolidity() external view returns (uint256 blobBaseFee) {
         blobBaseFee = block.blobbasefee;
