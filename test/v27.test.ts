@@ -13,7 +13,7 @@ describe("v0.8.27_RequireWithErrorTest", function () {
     await requireTest.deployed();
   });
 
-  it("it should revert with InvalidValue error when input value is less than or equal to 100", async function () {
+  it("it should revert with self-defined error when input value is less than or equal to 100", function () {
     expect(requireTest.testRequireWithError(50))
       .to.be.revertedWithCustomError(requireTest, "InvalidValue")
       .withArgs(50);

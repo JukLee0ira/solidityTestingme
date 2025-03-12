@@ -22,25 +22,25 @@ describe("v0.8.26_RequireWithError", function () {
     expect(value.toNumber()).to.equal(100);
   });
 
-  it("it should revert a custom error when input value <= 10", async function () {
+  it("it should revert a custom error when input value <= 10", function () {
     expect(requireWithError.testCustomError(0))
       .to.be.revertedWithCustomError(requireWithError, "InvalidValue")
       .withArgs(0);
   });
 
-  it("it should revert a traditional string when input value <= 10", async function () {
+  it("it should revert a traditional string when input value <= 10", function () {
     expect(requireWithError.testStringMessage(5)).to.be.revertedWith(
       "Value is too small"
     );
   });
 
-  it("it should revert with InvalidRange errormulti-parameter self-defined error when input value > 1000", async function () {
-    expect(requireWithError.testMultiParamError(1001, { gasLimit: 100000 }))
+  it("it should revert with InvalidRange errormulti-parameter self-defined error when input value > 1000", function () {
+    expect(requireWithError.testMultiParamError(1001))
       .to.be.revertedWithCustomError(requireWithError, "InvalidRange")
       .withArgs(0, 1, 1001);
   });
 
-  it("it should revert  when input value <= 10", async function () {
+  it("it should revert  when input value <= 10", function () {
     expect(requireWithError.testSimpleRequire(5, { gasLimit: 100000 })).to.be
       .revertedWithoutReason;
   });
