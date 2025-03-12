@@ -40,7 +40,7 @@ const config: HardhatUserConfig = {
       url: "https://devnetstats.hashlabs.apothem.network/devnet",
       accounts: [PRIVATE_KEY],
       timeout: 60000,
-      gasPrice: 30000000000,
+      gasPrice: 300000000000,
       gas: 2100000,
       chainId: 551,
     },
