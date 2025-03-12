@@ -11,6 +11,7 @@ describe("v0.8.26_RequireWithError", function () {
     );
     requireWithError = await RequireWithError.deploy();
     await requireWithError.deployed();
+    console.log("requireWithError deployed to:", requireWithError.address);
   });
 
   it("it should success when input value > 10", async function () {
@@ -22,19 +23,19 @@ describe("v0.8.26_RequireWithError", function () {
   });
 
   it("it should revert a custom error when input value <= 10", async function () {
-    await expect(requireWithError.testCustomError(0))
+    expect(requireWithError.testCustomError(0))
       .to.be.revertedWithCustomError(requireWithError, "InvalidValue")
       .withArgs(0);
   });
 
   it("it should revert a traditional string when input value <= 10", async function () {
-    await expect(requireWithError.testStringMessage(5)).to.be.revertedWith(
+    expect(requireWithError.testStringMessage(5)).to.be.revertedWith(
       "Value is too small"
     );
   });
 
   it("it should revert with InvalidRange errormulti-parameter self-defined error when input value > 1000", async function () {
-    await expect(requireWithError.testMultiParamError(1001))
+    expect(requireWithError.testMultiParamError(1001, { gasLimit: 100000 }))
       .to.be.revertedWithCustomError(requireWithError, "InvalidRange")
       .withArgs(0, 1, 1001);
   });
