@@ -40,7 +40,7 @@ describe("v0.8.26_RequireWithError", function () {
   });
 
   it("it should revert  when input value <= 10", async function () {
-    await expect(requireWithError.testSimpleRequire(5, { gasLimit: 100000 })).to
-      .be.revertedWithoutReason;
+    expect(requireWithError.testSimpleRequire(5, { gasLimit: 100000 })).to.be
+      .revertedWithoutReason;
   });
 });
