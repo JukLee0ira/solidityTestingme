@@ -78,10 +78,10 @@ Before starting, please ensure that your development environment meets the follo
 
 2. **Run tests**
 
-   Use the following command to run the tests:
+   Choose your test network and use the following command to run the tests:
 
    ```bash
-   npx hardhat test
+   npx hardhat test --network <your testnet>
    ```
 
    now you should see the test results of each feature
