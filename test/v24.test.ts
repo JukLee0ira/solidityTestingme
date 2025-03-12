@@ -45,13 +45,11 @@ describe("v0.8.24_McopyTest", function () {
     await mcopyTest.deployed();
   });
 
-  describe("test mcopy()", function () {
-    it("expect value 0x50", async function () {
-      const copiedData = await mcopyTest.testMcopy();
-      // should return a 32-byte value
-      const expectedData = ethers.utils.hexZeroPad("0x50", 32);
-      expect(copiedData).to.equal(expectedData);
-    });
+  it("it should get the copied data 0x50", async function () {
+    const copiedData = await mcopyTest.testMcopy();
+    // should return a 32-byte value
+    const expectedData = ethers.utils.hexZeroPad("0x50", 32);
+    expect(copiedData).to.equal(expectedData);
   });
 });
 
