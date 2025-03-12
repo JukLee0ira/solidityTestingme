@@ -5,7 +5,7 @@ import { RequireWithError } from "../typechain-types";
 describe("v0.8.26_RequireWithError", function () {
   let requireWithError: RequireWithError;
 
-  beforeEach(async function () {
+  before(async function () {
     const RequireWithError = await ethers.getContractFactory(
       "RequireWithError"
     );
