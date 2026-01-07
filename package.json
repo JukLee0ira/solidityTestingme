@@ -18,6 +18,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "axios": "^1.13.2",
     "dotenv": "^16.4.7",
     "ethers": "^5.8.0",
     "solc": "^0.8.28"
